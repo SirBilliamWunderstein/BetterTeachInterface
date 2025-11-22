@@ -1,2 +1,0 @@
-q = b"\x1F\x0\x3\x1F\x3"
-print(q.split(b"x\1F"))
