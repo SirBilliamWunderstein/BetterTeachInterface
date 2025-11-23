@@ -5,19 +5,19 @@ setup cant be performed as of now
 ## What it does
 It let people ask questions, let ai ask questions, get chimical structures, and use flash cards
 
-##tech stack
+## tech stack
 used python
 tkinter
 
-##setup
+## setup
 it doesnt work. we ran outof time. 
 
-##Project Division
+## Project Division
 AAyush made the AI connection
 G Vishnu made the 3d renderer and tkinter GUI
 
-##demo video
+## demo video
 https://youtu.be/4AjuTdVqXM8
 
-#Disclosure
+## Disclosure
 AI was used in the GUI for the AI
