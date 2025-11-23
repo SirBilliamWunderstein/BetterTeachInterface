@@ -74,8 +74,8 @@ class AIBackend:
 
     def ask_from_pdf (self) :
         query = \
-            f"""Generate 10 questions from the following text so as to test knowledge as well as understanding. 
-            Start from easy questions then move onto the conceptual ones. Only generate questions and nothing else. Seperate questions by | character
+            f"""Generate 2 questions from the following text so as to test knowledge as well as understanding. 
+            Start from easy questions then move onto the conceptual ones. Only generate questions and nothing else. Seperate each question by a |
 \n\n {self.text}"""
 
 
@@ -84,12 +84,24 @@ class AIBackend:
             contents=query,
         )
 
-        return response.text
+        response = response.text
+        response = response.split("|")
 
+        return response
 
+    def compare(self, question, user_answer):
+
+        query = \
+            f"""see whether "{user_answer}" is correct answer to question "{question}" and assign a correctness score 
+            from 1 to 10. only give the number and nothing else"""
+
+        response = self.client.models.generate_content(
+            model="gemini-2.5-flash",
+            contents=query,
+        )
+
+        return int(response.text)
 
 
 backend = AIBackend(r"C:\Users\pokhr\OneDrive\Desktop\Current_elecf.pdf")
-
-#questions = AIBackend.ask_from_pdf().split("|")
 
