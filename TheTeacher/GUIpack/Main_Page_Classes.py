@@ -1,8 +1,7 @@
 import tkinter as tk
-from PIL import Image,ImageTk
 import pickle
 
-from ai_backend import *
+from BetterTeachInterface.TheTeacher.Backend.ai_backend import *
 
 backend = AIBackend()
 
